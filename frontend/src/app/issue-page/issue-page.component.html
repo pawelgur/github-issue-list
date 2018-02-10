@@ -1,0 +1,19 @@
+<div class="content-wrapper">
+  <a routerLink="/issues" class="back-button">Back to Issues</a>
+
+  <div *ngIf="issue" class="page-header card">
+    <h1 class="title">{{issue.title}} <span class="id">#{{issue.id}}</span></h1>
+    <p class="sub-title">
+      <span class="status">{{issue.status}}</span> <a href="" class="author-link">{{issue.author}}</a> opened this issue {{issue.opened}} - {{issue.commentCount}} {{commentLabel}}
+    </p>
+  </div>
+  <div *ngFor="let comment of comments" class="comment card">
+    <img src="/assets/avatar.jpg" alt="{{comment.author}}" class="avatar">
+    <div class="header">
+        <a href="" class="author-link">{{comment.author}}</a> commented {{comment.date}}
+    </div>
+    <div class="content">
+      {{comment.content}}
+    </div>
+  </div>
+</div>

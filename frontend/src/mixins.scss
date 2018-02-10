@@ -1,0 +1,19 @@
+%center-vertical {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin round-icon($bg-color, $content: "!") {
+    content: $content;
+    font-weight: bold;
+    width: 16px;
+    height: 16px;
+    background-color: $bg-color;
+    color: white;
+    display: inline-block;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 16px;
+    font-size: 11px;
+}

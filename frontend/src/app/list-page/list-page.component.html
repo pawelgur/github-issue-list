@@ -1,0 +1,45 @@
+<div class="list-header column">
+    <div class="content-wrapper">
+      <h1 class="title">Awesome github issue list app</h1>
+      <p class="subtitle">by  <img class="logo" src="assets/logo-small.png" alt="TESTIO." /></p>
+    </div>
+  </div>
+
+<div class="list column">
+  <div class="list-wrapper">
+    <div class="filters">
+      <a class="filter active">420 Open</a>
+      <a class="filter closed">6000 Closed</a>
+    </div>
+    <div *ngFor="let issue of issues" class="issue card">
+      <h5 class="title">
+        <a routerLink="/issue/{{issue.id}}">{{issue.title}}</a>
+        <span class="tag" *ngFor="let tag of issue.tags">{{tag}}</span>        
+      </h5>   
+      <p class="sub-title">#{{issue.id}} opened {{issue.opened}} by <a class="author-link">{{issue.author}}</a></p>
+      <a routerLink="/issue/{{issue.id}}" class="comments">{{issue.commentCount}}</a>
+    </div>
+  </div>
+  <div class="pagination">
+    <a class="previous">
+      Previous
+    </a>
+    <ul>
+      <li class="current">
+        <a href="">1</a>
+      </li>
+      <li>
+        <a href="">2</a>
+      </li>
+      <li>
+        <a href="">3</a>
+      </li>
+      <li>
+        <a href="">4</a>
+      </li>
+    </ul>
+    <a class="next">
+      Next
+    </a>
+  </div>
+</div>

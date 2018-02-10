@@ -1,0 +1,52 @@
+@import "../mixins";
+@import "../variables";
+
+$header-height: 115px;
+$header-side-padding: 50px;
+
+.main-content {
+    height: 100%;
+    padding-top: $header-height;
+    z-index: 1;
+}
+
+header {
+    height: $header-height;
+    background: white;
+    position: absolute;
+    border-bottom: 1px solid #e6e6e6;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    
+    .logo {
+        @extend %center-vertical;
+        left: $header-side-padding;
+    }
+
+    .buttons {
+        @extend %center-vertical;
+        right: $header-side-padding;
+        line-height: 18px;
+
+        .logout {
+            color: #2f3254;
+            font-size: 14px;
+            vertical-align: middle;          
+
+            &:before {
+                content: url("/assets/icon-logout.png");
+                margin-right: 10px;
+                display: inline-block;
+                height: 18px;
+                vertical-align: middle;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+}
